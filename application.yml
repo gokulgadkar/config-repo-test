@@ -1,1 +1,29 @@
-test
+spring:
+  application:
+    name: userserviceg  # Used by Spring Cloud Config Server
+  profiles:
+    active: dev       # Default profile, override in tests or prod
+
+  jpa:
+    hibernate:
+      ddl-auto: none   # Overridden per profile
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+
+  config:
+    import: optional:configserver:http://localhost:8888
+logging:
+  level:
+    root: INFO
+    com.yourpackage: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
