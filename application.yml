@@ -1,9 +1,4 @@
 spring:
-  application:
-    name: userserviceg  # Used by Spring Cloud Config Server
-  profiles:
-    active: dev       # Default profile, override in tests or prod
-
   jpa:
     hibernate:
       ddl-auto: none   # Overridden per profile
