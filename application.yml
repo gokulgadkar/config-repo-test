@@ -1,14 +1,11 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: none   # Overridden per profile
+      ddl-auto: none   # Overridden per profil
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: false
-
-  config:
-    import: optional:configserver:http://localhost:8888
 logging:
   level:
     root: INFO
