@@ -14,3 +14,11 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
